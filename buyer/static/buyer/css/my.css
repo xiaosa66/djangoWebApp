@@ -1,0 +1,50 @@
+#eye {
+    position: relative;
+    top: -28px;
+    right: -90%;
+}
+
+#eye1, #eye2 {
+    position: relative;
+    top: -30px;
+    left: 330px;
+}
+
+
+#login_btn {
+    position: relative;
+    right: -19%;
+    /*left: 170px;*/
+    width: 40%;
+    /*margin-left: 37.624px;*/
+}
+
+#register_btn {
+    /*position: absolute;*/
+    /*left: 0;*/
+    width: 40%;
+}
+
+#forgot {
+    position: relative;
+    top: -6px;
+}
+
+.err_msg {
+    margin-left: 50px;
+    color: red;
+}
+
+.custom-control {
+    padding: 0 20px;
+}
+
+#fileField {
+    opacity: 0;
+}
+
+#div_photo{
+    position: relative;
+    left: 0;
+    top: -29px;;
+}

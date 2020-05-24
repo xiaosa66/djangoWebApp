@@ -1,0 +1,48 @@
+.photo img {
+    width: 234.66px;
+    height: 234.66px;
+}
+
+.outer {
+    width: 800px;
+}
+
+.photo {
+    padding: 0;
+}
+
+#pic {
+    width: 234.66px;
+
+}
+
+#two{
+    padding-bottom: 0;
+}
+
+.outest {
+    width: 250px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.btn-danger {
+    position: absolute;
+    left: 110px;
+    top: 10px;
+}
+
+.add {
+    position: relative;
+    bottom: 5px;
+}
+
+.div1 {
+    /*margin-left: 50px;*/
+    /*margin-right: 50px;*/
+}
+
+.pagination {
+    position: absolute;
+    right: 180px;
+}

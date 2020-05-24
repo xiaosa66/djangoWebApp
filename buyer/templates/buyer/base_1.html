@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <!-- Basic page needs -->
+    <meta charset="utf-8">
+    <!--[if IE]>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<![endif]-->
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=2.0, user-scalable=yes"/>
+    <title>中公生鲜商城</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="{% static 'buyer/style.css' %}">
+    <!-- jquery js -->
+    <script type="text/javascript" src="{% static 'buyer/js/jquery.min.js' %}"></script>
+</head>
+
+<body class="cms-index-index cms-home-page">
+
+
+<div id="page">
+    <!--[if lt IE 8]>
+<p class="browserupgrade">您正在使用 <strong>outdated</strong> 浏览器。请 <a href="http://browsehappy.com/">升级您的浏览器</a> 提高您的体验.</p>
+<![endif]-->
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <!-- Header Language -->
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="welcome-msg"><h2>欢迎访问中公生鲜商城！</h2></div>
+                            <!-- End Header Language -->
+                        </div>
+                        <!-- 登录后 -->
+                        {% if request.COOKIES.buyer_name %}
+                            <div class="col-xs-6 hidden-xs">
+                                <div class="jtv-top-links">
+                                    <div class="links">
+                                        <ul>
+                                            <li><span class="hidden-xs"
+                                                      style="font-size: 16px; color: yellow">欢迎:{{ request.COOKIES.buyer_name }}</span>
+                                            </li>
+                                            <li><a href="/buyer/address_list/"><span class="hidden-xs">收货地址</span></a>
+                                            </li>
+                                            <li><a href="/buyer/car_list/"><span class="hidden-xs">购物车</span></a></li>
+                                            <li>
+                                                <div class="dropdown block-company-wrapper hidden-xs"><a role="button"
+                                                                                                         data-toggle="dropdown"
+                                                                                                         data-target="#"
+                                                                                                         class="block-company dropdown-toggle"
+                                                                                                         href="#"> 更多
+                                                    <span class="caret"></span></a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="/seller/register/">申请开店</a></li>
+                                                        <li><a href="/buyer/register/"><span>注册</span></a></li>
+                                                        <li><a href="/buyer/logout/"> 退出登录 </a></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        {% else %}
+                            <!-- 登录前 -->
+                            <div class="col-xs-6 hidden-xs">
+                                <div class="jtv-top-links">
+                                    <div class="links">
+                                        <ul>
+                                            <li><a href="/buyer/login/"><span class="hidden-xs">登录</span></a></li>
+                                            <li><a href="/buyer/register/"><span class="hidden-xs">注册</span></a></li>
+                                            <li><a href="/seller/register/"><span class="hidden-xs">申请开店</span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                            <div class="jtv-top-cart-box">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12 jtv-logo-box">
+                            <!-- 头部的 Logo -->
+                            <div class="logo">
+                                <h1>
+                                    <a title="eCommerce" href="">
+                                        <img alt="eCommerce" src="{% static 'buyer/images/logo.png' %}">
+                                    </a>
+                                </h1>
+                            </div>
+                            <!-- 搜索栏 -->
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 hidden-xs">
+                            <div class="search-box">
+                                <form action="" method="POST" id="search_mini_form" name="Categories">
+                                    <input type="text" placeholder="Search here..." value="" maxlength="70"
+                                           name="search" id="search">
+                                    <button type="button" class="search-btn-bg"><span
+                                            class="glyphicon glyphicon-search"></span>&nbsp
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+
+    <!--主体部分-->
+    {% block main %}
+
+    {% endblock %}
+
+    <!-- 合作平台介绍 -->
+    <div class="brand-logo">
+        <div class="container">
+            <div class="slider-items-products">
+                <div id="brand-logo-slider" class="product-flexslider hidden-buttons">
+                    <div class="slider-items slider-width-col6">
+
+                        <!-- Item -->
+                        <div class="item"><a href="#"><img src="{% static 'buyer/images/brand3.png' %}" alt="Image">
+                        </a></div>
+                        <!-- End Item -->
+
+                        <!-- Item -->
+                        <div class="item"><a href="#"><img src="{% static 'buyer/images/brand1.png' %}" alt="Image">
+                        </a></div>
+                        <!-- End Item -->
+
+                        <!-- Item -->
+                        <div class="item"><a href="#"><img src="{% static 'buyer/images/brand2.png' %}" alt="Image">
+                        </a></div>
+                        <!-- End Item -->
+
+                        <!-- Item -->
+                        <div class="item"><a href="#"><img src="{% static 'buyer/images/brand4.png' %}" alt="Image">
+                        </a></div>
+                        <!-- End Item -->
+
+                        <!-- Item -->
+                        <div class="item"><a href="#"><img src="{% static 'buyer/images/brand5.png' %}" alt="Image">
+                        </a></div>
+                        <!-- End Item -->
+
+                        <!-- Item -->
+                        <div class="item"><a href="#"><img src="{% static 'buyer/images/brand6.png' %}" alt="Image">
+                        </a></div>
+                        <!-- End Item -->
+
+                        <!-- Item -->
+                        <div class="item"><a href="#"><img src="{% static 'buyer/images/brand2.png' %}" alt="Image">
+                        </a></div>
+                        <!-- End Item -->
+
+                        <!-- Item -->
+                        <div class="item"><a href="#"><img src="{% static 'buyer/images/brand4.png' %}" alt="Image">
+                        </a></div>
+                        <!-- End Item -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div style="text-align:center"><a href="#">
+                        <img src="{% static 'buyer/images/footer-logo.png' %}" alt="logo"> </a></div>
+                    <address>
+                        <p><i class="fa fa-map-marker"></i>中国·北京</p>
+                        <p><i class="fa fa-mobile"></i><span>tel:15300162466</span></p>
+                        <p><i class="fa fa-envelope"></i><span><a
+                                href="mailto:email@domain.com">1337765076@qq.com</a></span></p>
+                    </address>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- End Footer -->
+<!--引入js 文件-->
+
+
+<!-- bootstrap js -->
+<script type="text/javascript" src="{% static 'buyer/js/bootstrap.min.js' %}"></script>
+
+<!-- owl.carousel.min js -->
+<script type="text/javascript" src="{% static 'buyer/js/owl.carousel.min.js' %}"></script>
+
+<!-- jtv-jtv-mobile-menu js -->
+<script type="text/javascript" src="{% static 'buyer/js/jtv-mobile-menu.js' %}"></script>
+
+<!-- countdown js -->
+<script type="text/javascript" src="{% static 'buyer/js/countdown.js' %}"></script>
+
+<!-- main js -->
+<script type="text/javascript" src="{% static 'buyer/js/main.js' %}"></script>
+
+<!-- rev-slider js -->
+<script type="text/javascript" src="{% static 'buyer/js/rev-slider.js' %}"></script>
+
+<!-- cloud zoom js -->
+<script type="text/javascript" src="{% static 'buyer/js/cloud-zoom.js' %}"></script>
+
+<script type='text/javascript'>
+    jQuery(document).ready(function () {
+        jQuery('#jtv-rev_slider').show().revolution({
+            dottedOverlay: 'none',
+            delay: 5000,
+            startwidth: 1140,
+            startheight: 500,
+            hideThumbs: 200,
+            thumbWidth: 200,
+            thumbHeight: 50,
+            thumbAmount: 2,
+            navigationType: 'thumb',
+            navigationArrows: 'solo',
+            navigationStyle: 'round',
+            touchenabled: 'on',
+            onHoverStop: 'on',
+            swipe_velocity: 0.7,
+            swipe_min_touches: 1,
+            swipe_max_touches: 1,
+            drag_block_vertical: false,
+            spinner: 'spinner0',
+            keyboardNavigation: 'off',
+            navigationHAlign: 'center',
+            navigationVAlign: 'bottom',
+            navigationHOffset: 0,
+            navigationVOffset: 20,
+            soloArrowLeftHalign: 'left',
+            soloArrowLeftValign: 'center',
+            soloArrowLeftHOffset: 20,
+            soloArrowLeftVOffset: 0,
+            soloArrowRightHalign: 'right',
+            soloArrowRightValign: 'center',
+            soloArrowRightHOffset: 20,
+            soloArrowRightVOffset: 0,
+            shadow: 0,
+            fullWidth: 'on',
+            fullScreen: 'off',
+            stopLoop: 'off',
+            stopAfterLoops: -1,
+            stopAtSlide: -1,
+            shuffle: 'off',
+            autoHeight: 'off',
+            forceFullWidth: 'on',
+            fullScreenAlignForce: 'off',
+            minFullScreenHeight: 0,
+            hideNavDelayOnMobile: 1500,
+            hideThumbsOnMobile: 'off',
+            hideBulletsOnMobile: 'off',
+            hideArrowsOnMobile: 'off',
+            hideThumbsUnderResolution: 0,
+            hideSliderAtLimit: 0,
+            hideCaptionAtLimit: 0,
+            hideAllCaptionAtLilmit: 0,
+            startWithSlide: 0,
+            fullScreenOffsetContainer: ''
+        });
+    });
+</script>
+<!-- Hot Deals Timer 1-->
+<script type="text/javascript">
+    var dthen1 = new Date("12/25/17 11:59:00 PM");
+    start = "08/04/15 03:02:11 AM";
+    start_date = Date.parse(start);
+    var dnow1 = new Date(start_date);
+    if (CountStepper > 0)
+        ddiff = new Date((dnow1) - (dthen1));
+    else
+        ddiff = new Date((dthen1) - (dnow1));
+    gsecs1 = Math.floor(ddiff.valueOf() / 1000);
+
+    var iid1 = "countbox_1";
+    CountBack_slider(gsecs1, "countbox_1", 1);
+</script>
+</body>
+</html>
+

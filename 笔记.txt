@@ -1,0 +1,98 @@
+一、开发后台
+ 1、创建超级用户（用户信息也是保存在数据库表格中的）
+    -生成数据库表格
+        - python manage.py migrate
+    -创建超级用户
+        - python manage.py createsuperuser
+            -用户名
+            -邮箱地址
+            - 密码（没有回显效果）
+            - 确认密码
+            - y
+
+ 2、修改admin后台管理语言
+    -在项目的settings.py 中 修改 LANGUAGE_CODE = 'zh-hans'
+
+二、功能开发
+ 1、开发商品类型功能
+    -创建模型类
+        class Type(models.Model):
+            name = models.CharField(max_length=32)
+
+            def __str__(self):
+                return self.name
+    - 生成表格
+        - python manage.py check
+        - python manage.py makemigrations
+        - python manage.py migrate
+
+    -注册模型类
+        - admin.py 文件中
+            admin.site.register(模型类名称)
+
+ 2、开发商品功能
+    - 创建模型类
+    - 生成表格
+    - 注册模型类
+
+ 3、商品图片功能
+    - 注意事项：
+        - 商品和和商品图片是一对多关系。因此需要创建模型类设置关系。
+        - 因为模型类中的属性设计到了文件上传，因此需要下载辅助模块 pillow。pip install pillow
+        - 设置上传文件的目录 ： MEDIA_ROOT=os.path.join(BASE_DIR,'static')
+    - 创建模型类
+        class GoodsImage(models.Model):
+            # upload_to: 表示上传文件的具体目录  static/goodsimage
+            image_address = models.ImageField(upload_to='goodsimage')
+            goods = models.ForeignKey(to=Goods, on_delete=models.CASCADE)
+
+            def __str__(self):
+                return str(self.image_address)
+
+    - 生成表格
+    - 注册模型类
+
+
+三、创建APP
+    - python manage.py startapp app名称
+    - 在settings.py中注册创建的APP
+
+
+四、前台开发
+    -注意事项：
+        1.核心是后台逻辑（页面要求大家能看懂）。
+        2.页面由前端工程师提供给我们后台工程师，后台工程师进行修改静态页面内容。
+        3.先复制静态文件，再复制页面。
+
+    1、首页功能开发（商品展示）
+        - 页面（需要）
+        - 视图函数（需要，后台工程师写的核心逻辑）
+        - 路由（需要,创建子路由，主路由引入子路由）
+
+    2、商品详情功能开发
+        - 页面
+        - 视图函数
+        - 路由
+
+    3、注册功能开发
+        - 模型类
+        - 页面
+        - 视图函数
+        - 路由
+
+
+
+
+-小组答辩
+ - 演示项目（学的功能要都有。可以扩展新功能）
+ - 问项目实现的思路、流程。
+ - 什么是ORM、你对ORM的理解。
+
+
+-评论功能分析
+ - 模型类
+ - 页面（和商品详情公用一个页面）
+ - 视图函数
+ - 路由
+ -思路：编写评论内容 -->提交--> 将内容保存到数据库-->重定向到当前页面。
+

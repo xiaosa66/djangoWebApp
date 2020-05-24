@@ -1,0 +1,66 @@
+.input{ width: 300px; height: 50px;padding-left: 10px;margin-left: 20px; border: 1px solid #9F9F9F; border-radius: 5px}
+.cart_list{ width: 1100px; height:auto;overflow: hidden;  margin: auto}
+.cart_list p{
+    font-size:12px;
+    line-height:150%;
+    background:#fff;
+    color:#333;
+}
+.cart_top{ width: 100%; height: 50px; line-height: 50px;font-family: "微软雅黑"; font-size: 25px;color: #4E5465;border-bottom: 1px solid #4E5465; margin-bottom: 30px; padding-bottom: 10px;}
+
+.btn{ width: 150px; height: 40px; background-color: #5FB878; color: #ffffff; border: none;
+    border-radius: 5px;font-size: 18px;font-family: "微软雅黑";}
+
+.add_address{
+    color: red;
+    font-size: 30px;
+    position: relative;
+    top: 13px;
+}
+.lab{
+    font-size: 15px;
+}
+
+.Caddress{margin: auto;position: relative;margin-bottom: 30px;}
+.Ccart{width: 100px;height: 20px;position: absolute;background: #ECECEC;right: 5px;line-height: 20px;text-align: center;top: -21px;}
+.Caddress .add_mi{height: 106px;float: left;margin-right: 5px; background: url(../images/mail.jpg) no-repeat;padding: 6px 6px;}
+.Caddress .add_mi p{font-size: 12px;line-height: 20px;margin-bottom: 5px;color: #666;width: 203px;}
+.Cbox{width: 1210px;margin:15px auto;overflow: hidden}
+.Cprice{width: 1210px;margin:20px auto;overflow: hidden; background: #F3F3F3}
+.Cprice .price{width: 121px;padding: 5px 10px;line-height: 30px;background-color: #808080;float: left;color:#fff;}
+.Cprice .jiesuan{padding: 5px 20px; float: right;line-height: 30px;background: #f40;color: #fff;font-size: 22px}
+
+.shade{width: 100%; height: 100%; overflow-y: hidden; position: fixed; z-index: 100; top: 0; background: black; opacity: 0.5;}
+.shade_content{width: 800px; border-radius: 10px; height: 500px; position: fixed; z-index: 101; top: 50%; left: 50%; margin-top: -250px; margin-left: -400px; background: #FFFFFF; }
+.shade_content_div{margin: 0px auto; text-align: center; height: 100%; width: 80%; margin-top: 20px;}
+.shade_title{font-size: 30px; text-align: center; font-weight: bold; font: "微软雅黑";}
+.btn_remove{border-radius: 5px; background: #5FB878; color: white; width: 150px; height: 40px; border: 0px; outline: 0px; font-size: 15px;}
+.sub_set{border-radius: 5px; background: #5FB878; color: white; width: 150px; height: 40px; border: 0px; outline: 0px; font-size: 15px;}
+.input_style{height: 30px; border-radius: 5px; width: 250px; outline: 0px; border: 1px solid #CCCCCC;}
+.span_style{font-size: 18px;}
+.shade_from{margin-top: 20px;}
+.shade_from .col-xs-12{margin-top: 20px;}
+.shade_colse{text-align: right; margin-top: 10px; }
+.shade_colse button{font-size: 20px; color: white; outline: 0px; margin-right: 10px; border-radius: 50px; background: red; height: 30px; width: 30px; border: 0px;}
+.open_new{width: 100%;text-align: right;}
+.open_btn{height: 40px; width: 100px; border-radius: 10px; background: #5FB878; color: white; outline: 0px; border: 0px ;}
+.shopping_content{margin: auto;position: relative;}
+.shopping_table{width: 100%;}
+.btn_r{border-radius: 5px; background: #5FB878; color: white; width: 60px; height: 30px; border: 0px; outline: 0px; font-size: 15px;}
+.momey_input{border-radius: 5px; outline: 0px; height: 20px; width: 50px; border: 1px solid #CCCCCC; text-align: center;}
+.btn_reduce{height: 20px; width: 20px; border: 1px solid #CCCCCC; background: transparent;border-radius: 2px; outline: 0px;}
+.btn_add{height: 20px; width: 20px; border: 1px solid #CCCCCC; background: transparent;border-radius: 2px;outline: 0px;}
+.btn_closing{height: 40px; width: 100px; border-radius: 5px; background: #5FB878; outline: 0px; border: 1px solid transparent; color: white;}
+.div_outMumey{height: 40px; width: auto; border-radius: 5px; background: #5FB878; color: white;text-align: center; line-height: 40px; font-size: 20px;}
+th{height: 40px; font-size: 15px; font: "微软雅黑";}
+
+th, td {
+    width: 16%;
+
+}
+th{
+    font-size: 16px;
+}
+td{
+    font-size: 14px;
+}

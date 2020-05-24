@@ -1,0 +1,95 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>中公生鲜商城</title>
+    <link rel="stylesheet" href="{% static 'buyer/vendor/simple-line-icons/css/simple-line-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'buyer/vendor/font-awesome/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'buyer/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'buyer/css/my.css' %}">
+    <script src="{% static 'buyer/js/jquery.min.js' %}"></script>
+</head>
+<body>
+<div class="page-wrapper flex-row align-items-center">
+    {% include 'buyer/login_header.html' %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+
+                <form action="/buyer/register/" method="post">
+                    {% csrf_token %}
+                    <div class="card p-4" style="top: 40px">
+                        <div class="card-header text-center text-uppercase h4 font-weight-light">
+                            中公生鲜用户注册
+                        </div>
+
+                        <div class="card-body py-5" style="padding: 0 16px;">
+
+                            <!--用户名-->
+                            <div class="form-group">
+                                <label class="form-control-label">用户名</label>
+                                <input type="text" class="form-control" id="username" name="username"
+                                       placeholder="请输入用户名" value="{{ username }}" required>
+                                <span style="font-size: small;color: red" id="username_error">{{ error_msg }}</span>
+                            </div>
+
+                            <!--昵称-->
+
+                            <div class="form-group">
+                                <label class="form-control-label">昵称</label>
+                                {#                                <span class="err_msg" id="err_msg1"></span>#}
+                                <input type="tel" class="form-control" name="nickname" id="zhuce1" placeholder="请输入昵称"
+                                       onfocus="$('#err_msg1').text('')" required value="{{ nickname }}">
+                            </div>
+
+                            <!--密码-->
+
+                            <div class="form-group">
+                                <label class="form-control-label">密码</label>
+                                <input type="password" class="form-control pwd" id="password1" name="userpass"
+                                       required placeholder="请输入密码">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-control-label">确认密码</label>
+                                <span class="err_msg" id="err_msg2"></span>
+                                <input type="password" class="form-control pwd" id="password2"
+                                       required placeholder="请输入确认密码">
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <input type="submit" class="btn btn-success btn-block" id="sub_btn" value="注册"
+                                   style="position: relative;top: -30px;">
+                            <div>已有账户,<a href="/buyer/login/">前往登录</a></div>
+                            <br>
+                            <div><a href="/buyer/register_email/">邮箱注册</a><a href="" style="margin-left:65%">手机号注册</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        //注册验证
+        $("#sub_btn").click(function () {
+            // 两次密码校验
+            var pwd1 = $("#password1").val();
+            var pwd2 = $("#password2").val();
+            if (pwd1 != pwd2) {
+                $("#err_msg2").text("两次密码不一致");
+                return false;
+            }
+        });
+    });
+
+</script>
+</body>
+</html>

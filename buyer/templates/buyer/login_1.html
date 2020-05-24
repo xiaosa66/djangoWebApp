@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>中公生鲜商城</title>
+    <link rel="stylesheet" href="{% static 'buyer/vendor/simple-line-icons/css/simple-line-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'buyer/vendor/font-awesome/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'buyer/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'buyer/css/my.css' %}">
+
+    <script src="/static/jq/jquery-1.12.4.min.js"></script>
+
+</head>
+<body>
+
+<div class="page-wrapper flex-row align-items-center">
+    {% include 'buyer/login_header.html' %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="card p-4">
+                    <div class="card-header text-center text-uppercase h4 font-weight-light">
+                        中公生鲜用户登录
+                    </div>
+                    <form action="/buyer/login/" method="post">
+                        {% csrf_token %}
+                        <div class="card-body py-5">
+                            <!--用户名-->
+                            <div class="form-group">
+                                <label style="font-size: 18px">用户名:</label>
+                                <input type="text"
+                                       style='width:72%;line-height: 32px;border-color:#f1f1f1; border-style: solid'
+                                       name="username" required value="{{ username }}"/>
+                            </div>
+                            <!--密码-->
+                            <div class="form-group">
+                                <div>
+                                    <label style="font-size: 18px">密&nbsp;&nbsp;&nbsp;&nbsp;码:</label>
+                                    <input type="password"
+                                           style='width:72%;line-height: 32px;border-color:#f1f1f1; border-style: solid'
+                                           name="password" required id="password"/>
+                                </div>
+                            </div>
+                            <p style="color: red">{{ error_msg.up }}</p>
+
+                            <div class="custom-control custom-checkbox mt-4">
+                                <input type="button" class="btn btn-primary" value="注册" id="register_btn"
+                                       onclick="window.location.href='/buyer/register/'">
+                                <input type="submit" class="btn btn-primary" value="登录" id="login_btn">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,195 @@
+﻿{% extends "buyer/base_1.html" %}
+{% load static %}
+{% block main %}
+    <!-- Navigation -->
+
+    <!-- our features -->
+    <div class="our-features-box hidden-xs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xs-12 col-sm-6">
+                    <div class="feature-box first"><i class="icon-plane icons"></i>
+                        <div class="content">
+                            <h6>免费快速送达</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12 col-sm-6">
+                    <div class="feature-box"><i class="icon-earphones-alt icons"></i>
+                        <div class="content">
+                            <h6>为客户提供7/24全天候服务</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12 col-sm-6">
+                    <div class="feature-box"><i class="icon-like icons"></i>
+                        <div class="content">
+                            <h6>100% 满意保证</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12 col-sm-6">
+                    <div class="feature-box last"><i class="icon-tag icons"></i>
+                        <div class="content">
+                            <h6>每日优惠折扣</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 轮播图-->
+    <div class="jtv-slideshow">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div id='jtv-rev_slider_wrapper' class='rev_slider_wrapper fullwidthbanner-container'>
+                        <div id='jtv-rev_slider' class='rev_slider fullwidthabanner'>
+                            <ul>
+                                {% for lun_goods_obj in lb_goods_obj_list %}
+                                    <li data-transition='random' data-slotamount='7' data-masterspeed='1000'
+                                        data-thumb='{% static lun_goods_obj.goodsimage_set.first.image_address.name %}'>
+                                        <img
+                                                src="{% static lun_goods_obj.goodsimage_set.first.image_address.name %}"
+                                                alt="slide-img"
+                                                data-bgposition='left top' data-bgfit='cover'
+                                                data-bgrepeat='no-repeat'/>
+                                        <div class="info">
+                                            <div class='tp-caption jtv-sub-title sft  tp-resizeme ' data-endspeed='500'
+                                                 data-speed='500' data-start='1100' data-easing='Linear.easeNone'
+                                                 data-splitin='none' data-splitout='none' data-elementdelay='0.1'
+                                                 data-endelementdelay='0.1'
+                                                 style='z-index:2;max-width:auto;max-height:auto;white-space:nowrap;'>
+                                                <span>种植有机结合</span>
+                                            </div>
+                                            <div class='tp-caption jtv-large-title sfl  tp-resizeme '
+                                                 data-endspeed='500'
+                                                 data-speed='500' data-start='1300' data-easing='Linear.easeNone'
+                                                 data-splitin='none' data-splitout='none' data-elementdelay='0.1'
+                                                 data-endelementdelay='0.1'
+                                                 style='z-index:3;max-width:auto;max-height:auto;white-space:nowrap;'>
+                                                <span>100% 天然</span>
+                                            </div>
+                                            <div class='tp-caption Title sft  tp-resizeme ' data-endspeed='500'
+                                                 data-speed='500' data-start='1450' data-easing='Power2.easeInOut'
+                                                 data-splitin='none' data-splitout='none' data-elementdelay='0.1'
+                                                 data-endelementdelay='0.1'
+                                                 style='z-index:4;max-width:auto;max-height:auto;white-space:nowrap;'>质量
+                                                & 新鲜有保证、良好又健康.
+                                            </div>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 结束JTV Home滑块 -->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- 轮播图下面广告 -->
+    <div class="jtv-bottom-banner-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="jtv-img-box">
+                        <a href="">
+                            <img src="{% static 'buyer/images/jtv-banner1.jpg' %}" alt="bottom banner">
+                            <div class="jtv-banner-info"><span>天然100%有机</span>
+                                <h3>有机水果</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="jtv-img-box">
+                        <a href="#">
+                            <img src="{% static 'buyer/images/jtv-banner2.jpg' %}" alt="bottom banner">
+                            <div class="jtv-banner-info"><span>新鲜采摘</span>
+                                <h3>大蒜丁香</h3>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="col-sm-4">
+                    <div class="jtv-img-box"><a href="#"> <img
+                            src="{% static 'buyer/images/jtv-banner3.jpg' %}" alt="bottom banner">
+                        <div class="jtv-banner-info"><span>折扣45%</span>
+                            <h3>草莓芬芳</h3>
+                        </div>
+                    </a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 所有商品 -->
+    <section class="special-products">
+        <div class="container">
+            <div class="slider-items-products">
+
+                <div class="category-products">
+                    <ul class="products-grid">
+                        {% for goods_obj in all_goods_obj_list %}
+                            <li class="item col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                                <div class="item-inner">
+                                    <div class="item-img">
+                                        <div class="item-img-info">
+                                            <a class="product-image" title="Product Title Here"
+                                               href="/buyer/goods_detail/?id={{ goods_obj.id }}">
+                                                <img alt="Product Title Here" width="50px" height="230px"
+                                                     src="{% static goods_obj.goodsimage_set.first.image_address.name %}">
+                                            </a>
+                                            <div class="jtv-box-hover">
+                                                <ul class="add-to-links">
+                                                    <li><a class="link-quickview" href="#"><i
+                                                            class="icon-magnifier-add icons"></i><span class="hidden">Quick View</span></a>
+                                                    </li>
+                                                    <li><a class="link-wishlist" href="#"><i
+                                                            class="icon-heart icons"></i><span
+                                                            class="hidden">Wishlist</span></a></li>
+                                                    <li><a class="link-compare" href="#"><i
+                                                            class="icon-shuffle icons"></i><span
+                                                            class="hidden">Compare</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-info">
+                                        <div class="info-inner">
+                                            <div class="item-title"><h6><a title="Product Title Here"
+                                                                           href=""> {{ goods_obj.goods_name }}</a></h6>
+                                            </div>
+                                            <div class="item-content">
+                                                <div class="rating"><i class="fa fa-star"></i> <i
+                                                        class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                        class="fa fa-star"></i> <i class="fa fa-star"></i></div>
+                                                <div class="item-price">
+                                                    <div class="price-box"><span class="regular-price"> <span
+                                                            class="price">{{ goods_obj.goods_xprice }}元/500g</span> </span>
+                                                    </div>
+                                                </div>
+                                                <div class="action">
+                                                    <button class="button btn-cart" type="button" title=""
+                                                            data-original-title="Add to Cart"><span><a
+                                                            href="/buyer/goods_details/?id={{ goods_obj.id }}">查看详情</a></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
